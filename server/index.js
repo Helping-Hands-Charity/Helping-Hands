@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.js";
+import donationRouter from "./routes/donation.js";
 
 const app = express();
 dotenv.config();
@@ -14,8 +15,9 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/users", userRouter); //http://localhost:5000/users/signup
+app.use("/donations", donationRouter);
 app.get("/", (req, res) => {
-  res.send("Welcome to report API");
+  res.send("Welcome to donation API");
 });
 
 const port = process.env.PORT || 5000;
