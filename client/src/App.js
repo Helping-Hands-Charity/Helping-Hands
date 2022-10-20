@@ -13,14 +13,19 @@ import PrivateRoute from "./components/PrivateRoute";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import HomeView from "./pages/HomeView";
+import AddDonor from "./pages/AddDonor";
+import EditDonor from "./pages/EditDonor";
+import DonorDashboard from "./pages/DonorDashboard";
+import SingleDonor from "./pages/SingleDonor";
+
 
 function App() {
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
   useEffect(() => {
     dispatch(setUser(user));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   return (
     <BrowserRouter>
@@ -39,8 +44,38 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/add_donor" element={<PrivateRoute></PrivateRoute>} />
-          <Route path="/all_donors" element={<PrivateRoute></PrivateRoute>} />
+           <Route
+            path="/add_donor"
+            element={
+              <PrivateRoute>
+                <AddDonor />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/edit_donor/:id"
+            element={
+              <PrivateRoute>
+                <EditDonor />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/all_donors"
+            element={
+              <PrivateRoute>
+                <DonorDashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/donor/:id"
+            element={
+              <PrivateRoute>
+                <SingleDonor />
+              </PrivateRoute>  
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

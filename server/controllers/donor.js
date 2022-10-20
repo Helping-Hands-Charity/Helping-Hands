@@ -56,9 +56,6 @@ export const deleteDonor = async (req, res) => {
     const {firstName, lastName, email, nic, address, phone} = req.body;
 
     try{
-     if(!mongoose.Types.ObjectId.isValid(id)){
-            return res.status(404).json({message: `No donor found with the id: ${id}`});
-        }
 
         const updatedDonor={
             firstName,
@@ -75,4 +72,15 @@ export const deleteDonor = async (req, res) => {
         res.status(404).json({message: "Something went wrong"});
     }
     
+};
+
+export const getDonorsBySearch = async(req,res)=>{
+    const {searchQuery}=req.query;
+    try{
+        const firstName= new RegExp(searchQuery,"i");
+        const donors = await DonorModel.find({firstName});
+        res.json(donors);
+    }catch(error){
+        res.status(404).json({message:"Something went wrong"});
+    }
 };

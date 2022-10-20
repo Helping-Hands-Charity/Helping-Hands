@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   MDBNavbar,
   MDBContainer,
@@ -9,15 +9,16 @@ import {
   MDBNavbarToggler,
   MDBCollapse,
   MDBNavbarBrand,
+
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
-import { setLogout } from "../redux/features/authSlice";
-// import { searchReports } from '../redux/features/reportSlice';
+import { setLogout } from '../redux/features/authSlice';
 import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const [search, setSearch] = useState("");
   const { user } = useSelector((state) => ({ ...state.auth }));
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,25 +31,17 @@ const Header = () => {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handleLogout = () => {
     dispatch(setLogout());
   };
 
   return (
-    <MDBNavbar
-      fixed="top"
-      expand="lg"
-      style={{ backgroundColor: "#f0e6ea", height: "70px" }}
-    >
+    <MDBNavbar fixed='top' expand="lg" style={{ backgroundColor: "#f0e6ea", height: "70px" }}>
       <MDBContainer>
+
         <MDBNavbarBrand
-          href="/"
-          style={{ color: "#606080", fontWeight: "600", fontSize: "22px" }}
-        >
+          href="/home"
+          style={{ color: "#606080", fontWeight: "600", fontSize: "22px" }}>
           Helping Hands
         </MDBNavbarBrand>
         <MDBNavbarToggler
@@ -64,36 +57,38 @@ const Header = () => {
           <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
             {user?.result?._id && (
               <h5 style={{ marginRight: "30px", marginTop: "27px" }}>
-                Logged in as: {user?.result?.name}
-              </h5>
+                Logged in as: {user?.result?.name}</h5>
             )}
-            {user?.result?._id && <></>}
+            {user?.result?._id && (
+              <>
+                <MDBNavbarItem>
+                  <MDBNavbarLink href="/home">
+                    <p className="header-text">Dashboard</p>
+                  </MDBNavbarLink>
+                </MDBNavbarItem>
+              </>
+            )}
             {user?.result?._id ? (
               <MDBNavbarItem>
                 <MDBNavbarLink href="/login">
-                  <p className="header-text" onClick={handleLogout}>
-                    Logout
-                  </p>
+                  <p className="header-text" onClick={handleLogout}> <i className="fas fa-sign-out"></i> &nbsp;Logout</p>
                 </MDBNavbarLink>
               </MDBNavbarItem>
+
             ) : (
               <MDBNavbarItem>
                 <MDBNavbarLink href="/login">
-                  <p className="header-text">Login</p>
+                  <p className="header-text"> <i className="fas fa-sign-in"></i> &nbsp;Login</p>
                 </MDBNavbarLink>
+                
               </MDBNavbarItem>
             )}
+
           </MDBNavbarNav>
-          <form className="d-flex input-group w-auto" onSubmit={handleSubmit}>
-            <div
-              data-testid="test-1"
-              style={{ marginTop: "5px", marginLeft: "5px" }}
-            ></div>
-          </form>
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

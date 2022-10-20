@@ -123,18 +123,19 @@ const Register = () => {
                             />
                         </div>
                         <div className="col-12">
-                            <MDBBtn style={{ with: "100%" }} className="mt-2">
-                                {loading && (
-                                    <MDBSpinner
-                                        size="sm"
-                                        role="status"
-                                        tag="span"
-                                        className="me-2"
-                                    />
-                                )}
-                                Register
-                            </MDBBtn>
-                        </div>
+                    <MDBBtn style={{width: "100%"}} className="mt-2">
+                        {loading && (
+                            <MDBSpinner
+                            size="sm"
+                            role="status"
+                            tag="span"
+                            className="me-2"
+                            />
+
+                        )}
+                        Register
+                    </MDBBtn>
+                </div>
                     </MDBValidation>
                 </MDBCardBody>
                 <MDBFooter>
