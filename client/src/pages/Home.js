@@ -18,11 +18,13 @@ const HomeView = () => {
                 </a>
               </div>
               <div class="col-lg-6 col-md-6 col-6 col-sm-6">
-                <div class="card" style={{ height: "5rem" }}>
-                  <div class="card-body">
-                    <p class="card-text">Volunteer Management</p>
+                <a href="/all_volunteers">
+                  <div class="card" style={{ height: "5rem" }}>
+                    <div class="card-body">
+                      <p class="card-text">Volunteer Management</p>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 

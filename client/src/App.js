@@ -41,6 +41,10 @@ function App() {
           />
           <Route path="/add_donor" element={<PrivateRoute></PrivateRoute>} />
           <Route path="/all_donors" element={<PrivateRoute></PrivateRoute>} />
+          <Route
+            path="/all_volunteers"
+            element={<PrivateRoute></PrivateRoute>}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
