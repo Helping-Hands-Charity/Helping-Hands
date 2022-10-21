@@ -52,7 +52,7 @@ export const deleteDonation = async (req, res) => {
 
 export const updateDonation = async (req, res) => {
   const { id } = req.params;
-  const { item, type, date, organization, description, amount } = req.body;
+  const { item, type, date, des, org, amount } = req.body;
 
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -65,8 +65,8 @@ export const updateDonation = async (req, res) => {
       item,
       type,
       date,
-      organization,
-      description,
+      des,
+      org,
       amount,
       _id: id,
     };

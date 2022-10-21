@@ -14,6 +14,11 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import HomeView from "./pages/HomeView";
 
+import AddDonation from "./pages/AddDonation";
+import EditDonation from "./pages/EditDonation";
+import DonationDashboard from "./pages/DonationDashboard";
+import SingleDonation from "./pages/SingleDonation";
+
 function App() {
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -39,8 +44,39 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/add_donor" element={<PrivateRoute></PrivateRoute>} />
-          <Route path="/all_donors" element={<PrivateRoute></PrivateRoute>} />
+          <Route
+            path="/add_donation"
+            element={
+              <PrivateRoute>
+                <AddDonation />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/edit_donation/:id"
+            element={
+              <PrivateRoute>
+                <EditDonation />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/all_donations"
+            element={
+              <PrivateRoute>
+                <DonationDashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/donation/:id"
+            element={
+              <PrivateRoute>
+                <SingleDonation />
+              </PrivateRoute>
+            }
+          />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
