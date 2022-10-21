@@ -79,9 +79,4 @@ ways.
 
 # Group Number	SER050
 
-Name	Registration No	Signature
-Navoda R.C	IT20209520	 
-Ranasinghe P.R.K.U	IT20259266	 
-Wishvajith G.K.N.P	IT20168704	 
-Jayawardane W.M.A.V	IT20174330	 
 
