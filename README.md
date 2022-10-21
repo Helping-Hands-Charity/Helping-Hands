@@ -79,7 +79,7 @@ ways.
 
 # Group Number	SER050
 
-| Name       | #1    | #2    |
-| :-----:    | :---: | :---: |
+| Name       | Student ID   | User Name | Branch Name |
+| :---------:| :----------: | :-------: |:----------: |
 | Navoda R.C | 301   | 283   |
 
