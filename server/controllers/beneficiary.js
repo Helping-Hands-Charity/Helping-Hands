@@ -52,7 +52,7 @@ export const deleteBeneficiary = async (req, res) => {
 
 export const updateBeneficiary = async (req, res) => {
   const { id } = req.params;
-  const { firstName, lastName, nic, address, phone, details, status } =
+  const { firstName, lastName, address, email, phone, date, details } =
     req.body;
 
   try {
@@ -65,12 +65,11 @@ export const updateBeneficiary = async (req, res) => {
     const updatedBeneficiary = {
       firstName,
       lastName,
-      email,
-      nic,
       address,
+      email,
       phone,
+      date,
       details,
-      status,
       _id: id,
     };
     await BeneficiaryModel.findByIdAndUpdate(id, updatedBeneficiary, {
