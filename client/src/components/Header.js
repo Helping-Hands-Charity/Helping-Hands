@@ -12,7 +12,6 @@ import {
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
-// import { searchReports } from '../redux/features/reportSlice';
 import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
 
@@ -20,7 +19,6 @@ const Header = () => {
   const [show, setShow] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const token = user?.token;
 
   if (token) {
