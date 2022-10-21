@@ -79,7 +79,13 @@ ways.
 
 # Group Number	SER050
 
-| Name       | Student ID   | User Name | Branch Name |
-| :---------:| :----------: | :-------: |:----------: |
-| Navoda R.C |  IT20209520  |   |
 
+| Name               | Group ID  | User Name    | Branch Name |
+| :--------:         | :-------: | :----------: | :---------: |
+| Navoda R.C         | IT20209520| ChathraNavoda| IT20209520  |
+| :--------:         | :-------: | :----------: | :---------: |
+| Ranasinghe P.R.K.U | IT20259266| KavinduR98   | IT20259266  |
+| :--------:         | :-------: | :----------: | :---------: |
+| Wishvajith G.K.N.P | IT20168704| namalganegama| IT20168704  |
+| :--------:         | :-------: | :----------: | :---------: |
+| Jayawardane W.M.A.V| IT20174330|vibhujay99    | IT20174330  |
