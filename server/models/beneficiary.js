@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 const beneficiarySchema = mongoose.Schema({
   firstName: String,
   lastName: String,
-  email: String,
-  nic: String,
   address: String,
+  email: String,
   phone: String,
+  date: String,
   details: String,
-  status: String,
+  
   createdAt: {
     type: Date,
     default: new Date(),
