@@ -4,8 +4,8 @@ const donationSchema = mongoose.Schema({
   item: String,
   type: String,
   date: String,
-  description: String,
-  organization: String,
+  des: String,
+  org: String,
   amount: String,
   createdAt: {
     type: Date,
