@@ -52,6 +52,7 @@ export const deleteDonation = async (req, res) => {
 
 export const updateDonation = async (req, res) => {
   const { id } = req.params;
+
   const { item, type, date, des, org, amount } = req.body;
 
   try {
