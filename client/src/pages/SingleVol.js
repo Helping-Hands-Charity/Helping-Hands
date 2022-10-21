@@ -121,7 +121,7 @@ const SingleVol = ({ _id }) => {
                         </p>
                       </div>
                       <div className="col-lg-8 col-md-8 col-8 col-sm-8">
-                        {/* <MDBInput
+                        <MDBInput
                           type="text"
                           textarea
                           rows={4}
@@ -130,8 +130,7 @@ const SingleVol = ({ _id }) => {
                           id="details"
                           value={volunteer.des}
                           readonly
-                        /> */}
-                        {volunteer.des}
+                        />
                       </div>
                     </div>
                   </div>
