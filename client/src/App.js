@@ -40,6 +40,7 @@ function App() {
   const user = JSON.parse(localStorage.getItem("profile"));
   useEffect(() => {
     dispatch(setUser(user));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
