@@ -68,8 +68,6 @@ export const updateDonation = async (req, res) => {
       date,
       des,
       org,
-      description,
-      organization,
       amount,
       _id: id,
     };

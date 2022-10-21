@@ -1,0 +1,6 @@
+projectKey=Healping_Hands
+serverUrl=http://localhost:9000
+serverVersion=9.7.0.61563
+dashboardUrl=http://localhost:9000/dashboard?id=Healping_Hands
+ceTaskId=AYP41ul1mFhaeQOW0TGZ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYP41ul1mFhaeQOW0TGZ
