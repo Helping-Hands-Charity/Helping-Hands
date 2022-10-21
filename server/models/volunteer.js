@@ -7,7 +7,7 @@ const volunteerSchema = mongoose.Schema({
   email: String,
   nic: String,
   phone: String,
-  description: String,
+  des: String,
   createdAt: {
     type: Date,
     default: new Date(),
