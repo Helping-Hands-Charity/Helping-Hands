@@ -52,7 +52,7 @@ export const deleteVolunteer = async (req, res) => {
 
 export const updateVolunteer = async (req, res) => {
   const { id } = req.params;
-  const { title, firstName, lastName, email, nic, phone, description } =
+  const { title, firstName, lastName, email, nic, phone, des } =
     req.body;
 
   try {
@@ -69,7 +69,7 @@ export const updateVolunteer = async (req, res) => {
       email,
       nic,
       phone,
-      description,
+      des,
       _id: id,
     };
     await VolunteerModel.findByIdAndUpdate(id, updatedVolunteer, { new: true });
