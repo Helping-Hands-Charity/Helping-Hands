@@ -34,7 +34,6 @@ const EditVol = () => {
         setPhone(res.data.phone);
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (e) => {
@@ -163,6 +162,7 @@ const EditVol = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     invalid
                     validation="Please provide the E-mail"
+                    pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
                     required
                     autoComplete="off"
                   />
@@ -180,7 +180,8 @@ const EditVol = () => {
                     value={nic || ""}
                     onChange={(e) => setNic(e.target.value)}
                     invalid
-                    validation="Please provide the NIC"
+                    validation="Please provide a valid NIC"
+                    pattern="/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/"
                     required
                     autoComplete="off"
                   />
@@ -196,7 +197,8 @@ const EditVol = () => {
                     value={phone || ""}
                     onChange={(e) => setPhone(e.target.value)}
                     invalid
-                    validation="Please provide the phone number"
+                    validation="Please provide a valid phone number"
+                    pattern="/^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$/"
                     required
                     autoComplete="off"
                   />

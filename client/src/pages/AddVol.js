@@ -162,8 +162,9 @@ const AddVol = () => {
                     id="email"
                     onChange={onInputChange}
                     invalid
-                    validation="Please provide the email"
+                    validation="Please provide a valid email"
                     required
+                    pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
                     autoComplete="off"
                   />
                 </div>
@@ -179,7 +180,8 @@ const AddVol = () => {
                     id="nic"
                     onChange={onInputChange}
                     invalid
-                    validation="Please provide the NIC"
+                    validation="Please provide a valid NIC"
+                    pattern="/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/"
                     required
                     autoComplete="off"
                   />
@@ -194,7 +196,8 @@ const AddVol = () => {
                     maxLength="10"
                     onChange={onInputChange}
                     invalid
-                    validation="Please provide the phone number"
+                    validation="Please provide a valid phone number"
+                    pattern="/^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$/"
                     required
                     autoComplete="off"
                   />
@@ -224,7 +227,7 @@ const AddVol = () => {
                   {id ? "Update" : "Submit"}
                 </MDBBtn>
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                <Link to="/all_donors">
+                <Link to="/all_vols">
                   <MDBBtn style={{ width: "15%" }} className="btn btn-primary">
                     Cancel
                   </MDBBtn>
